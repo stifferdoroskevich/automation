@@ -13,10 +13,6 @@ echo "Iniciando upgrade"
 sudo dnf -y update
 sudo dnf upgrade --best --allowerasing --refresh -y
 
-#atom.io
-sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
-sudo sh -y -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
-
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
@@ -25,7 +21,6 @@ sudo dnf -y update
 echo "upgrade instalando programas"
 sudo dnf -y copr enable ztefn/haguichi
 sudo dnf -y install gimp
-sudo dnf -y install atom 
 sudo dnf -y install snapd
 sudo dnf -y install haguichi 
 sudo dnf -y install ffmpeg #\ ffmpeg #Adds Codec Support to Firefox
@@ -35,6 +30,9 @@ echo "PAquetes SNAP"
 sudo snap install telegram-desktop
 sudo snap install spotify
 sudo snap install dbeaver-ce
+sudo snap install --classic code
+sudo snap install superproductivity
+sudo snap install postman
 
 #echo "descargando instaladores"
 #mkdir "$DIRECTORIO_DOWNLOADS"

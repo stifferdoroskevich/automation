@@ -26,6 +26,9 @@ sudo dnf -y install haguichi
 sudo dnf -y install ffmpeg #\ ffmpeg #Adds Codec Support to Firefox
 sudo dnf -y install vim-enhanced
 
+echo "Snap Config requirement"
+sudo ln -s /var/lib/snapd/snap /snap
+
 echo "PAquetes SNAP"
 sudo snap install telegram-desktop
 sudo snap install spotify
